@@ -15,6 +15,11 @@ This workspace contains ROS packages for operating and interacting with the Pepp
    ```
 
 ## Usage
+### Turn off pepper autonomous mood:
+ssh nao@<pepper IP>
+qicli call ALAutonomousLife.setState disabled
+qicli call ALMotion.wakeUp
+
 ### Teleoperation
 Run the following launch file to control Pepper using a keyboard:
 ```bash
@@ -40,6 +45,8 @@ roslaunch pepper_localization localization_with_map.launch
 
 ## Dependencies
 - ROS Kinetic
+- `naoqi_driver`
+- `pepper_control` 
 - `pepper_bringup`
 - `gmapping`
 - `map_server`
