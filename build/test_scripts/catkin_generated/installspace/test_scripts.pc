@@ -1,0 +1,8 @@
+prefix=/home/humanoidrobots/pepper/install
+
+Name: test_scripts
+Description: Description of test_scripts
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

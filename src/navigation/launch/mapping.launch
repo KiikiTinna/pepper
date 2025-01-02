@@ -1,0 +1,36 @@
+<launch>
+    <!-- Declare arguments -->
+    <arg name="nao_ip" default="192.168.0.102" />
+    <arg name="roscore_ip" default="192.168.0.100" />
+    <arg name="network_interface" default="wlp3s0" />
+    <arg name="map_name" default="map" />
+    <arg name="map_directory" default="/home/humanoidrots/test_scripts/maps/" />
+
+    <!-- Start roscore -->
+    <node pkg="roscore" type="roscore" name="roscore" />
+
+    <!-- Launch Pepper's full system -->
+    <include file="$(find pepper_bringup)/launch/pepper_full_py.launch">
+        <arg name="nao_ip" value="$(arg nao_ip)" />
+        <arg name="roscore_ip" value="$(arg roscore_ip)" />
+        <arg name="network_interface" value="$(arg network_interface)" />
+    </include>
+
+    <!-- Run gmapping for SLAM -->
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+        <param name="base_frame" value="base_footprint" />
+        <param name="odom_frame" value="odom" />
+        <param name="map_frame" value="map" />
+        <param name="_map_update_interval" value="1.0" />
+        <param name="scan" value="/laser/srd_front/scan" />
+        <param name="_temporalUpdate" value="1" />
+    </node>
+
+    <!-- Run RViz -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find pepper_bringup)/rviz/config.rviz" output="screen" />
+
+    <!-- Run teleop_twist_keyboard -->
+    <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop_twist_keyboard" output="screen" />
+
+</launch>
+

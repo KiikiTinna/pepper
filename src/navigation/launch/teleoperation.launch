@@ -1,0 +1,19 @@
+<launch>
+    <!-- Declare argument for NAO_IP -->
+    <arg name="nao_ip" default="192.168.0.102" />
+    <arg name="network_interface" default="wlp3s0" />
+    <arg name="nao_port" default="9559" />
+    <arg name="password" default="pepper" />
+
+    <!-- Launch the naoqi_driver -->
+    <include file="$(find naoqi_driver)/launch/naoqi_driver.launch">
+        <arg name="network_interface" value="$(arg network_interface)" />
+        <arg name="nao_ip" value="$(arg nao_ip)" />
+        <arg name="nao_port" value="$(arg nao_port)" />
+        <arg name="password" value="$(arg password)" />
+    </include>
+
+    <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop_twist_keyboard" output="screen" />
+
+
+</launch>
