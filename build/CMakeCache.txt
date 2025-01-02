@@ -309,7 +309,7 @@ gtest_force_shared_crt:BOOL=OFF
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/kinetic/lib/libxmlrpcpp.so
+lib:FILEPATH=/opt/ros/kinetic/lib/librostime.so
 
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/kinetic/share/message_runtime/cmake
@@ -319,6 +319,12 @@ navigation_BINARY_DIR:STATIC=/home/humanoidrobots/pepper/build/navigation
 
 //Value Computed by CMake
 navigation_SOURCE_DIR:STATIC=/home/humanoidrobots/pepper/src/navigation
+
+//Value Computed by CMake
+python_scripts_BINARY_DIR:STATIC=/home/humanoidrobots/pepper/build/python_scripts
+
+//Value Computed by CMake
+python_scripts_SOURCE_DIR:STATIC=/home/humanoidrobots/pepper/src/python_scripts
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/kinetic/share/rosconsole/cmake
@@ -455,7 +461,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

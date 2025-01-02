@@ -15,9 +15,13 @@ set(CMAKE_MAKEFILE_DEPENDS
   "catkin_generated/order_packages.cmake"
   "navigation/catkin_generated/ordered_paths.cmake"
   "navigation/catkin_generated/package.cmake"
+  "python_scripts/catkin_generated/ordered_paths.cmake"
+  "python_scripts/catkin_generated/package.cmake"
   "/home/humanoidrobots/pepper/src/CMakeLists.txt"
   "/home/humanoidrobots/pepper/src/navigation/CMakeLists.txt"
   "/home/humanoidrobots/pepper/src/navigation/package.xml"
+  "/home/humanoidrobots/pepper/src/python_scripts/CMakeLists.txt"
+  "/home/humanoidrobots/pepper/src/python_scripts/package.xml"
   "/opt/ros/kinetic/share/catkin/cmake/../package.xml"
   "/opt/ros/kinetic/share/catkin/cmake/all.cmake"
   "/opt/ros/kinetic/share/catkin/cmake/assert.cmake"
@@ -171,6 +175,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "gtest/gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "navigation/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "python_scripts/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
