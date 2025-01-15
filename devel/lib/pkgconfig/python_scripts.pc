@@ -1,0 +1,8 @@
+prefix=/home/humanoidrobots/pepper/devel
+
+Name: python_scripts
+Description: Description of python_scripts
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,20 @@
+<launch>
+
+  <!-- Launch the map server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="/home/humanoidrobots/test_scripts/maps/room.yaml" />
+ 
+  <!-- Load the costmap parameters from the YAML file -->
+  <rosparam command="load" file="$(find navigation)/config/costmap_params.yaml" />
+
+
+  <!-- Launch the AMCL node -->
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
+    <param name="transform_tolerance" value="1.0"/>
+    <param name="base_frame_id" value="odom"/>
+    <remap from="scan" to="/laser/srd_front/scan"/>
+  </node>
+
+
+  <!-- Launch RViz -->
+  <node name="rviz" pkg="rviz" type="rviz" />
+</launch>
