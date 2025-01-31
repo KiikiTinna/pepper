@@ -1,0 +1,35 @@
+
+  global_frame: /map  
+  robot_base_frame: /odom
+  transform_tolerance: 0.2
+  robot_radius: 0.5
+  update_frequency: 5.0
+  publish_frequency: 2.0
+  rolling_window: false
+
+  width: 20.0
+  height: 20.0
+  resolution: 0.050000
+  origin_x: -10.000000
+  origin_y: -10.000000
+
+  # Layers for costmap
+  plugins:
+    - {name: static, type: "costmap_2d::StaticLayer"}
+    - {name: inflation, type: "costmap_2d::InflationLayer"}
+    - {name: speed_adjustment_layer, type: "costmap_2d::StaticLayer"}
+
+  static:
+    unknown_cost_value: -1
+    lethal_cost_threshold: 100
+    map_topic: /map_global  
+
+  inflation:
+    inflation_radius: 0.5
+    cost_scaling_factor: 0.2
+
+  speed_adjustment_layer:  
+    map_file: /home/humanoidrobots/pepper/src/navigation/maps/speed_layer.yaml
+    unknown_cost_value: -1
+    lethal_cost_threshold: 100
+

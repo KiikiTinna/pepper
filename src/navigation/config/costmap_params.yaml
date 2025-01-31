@@ -16,6 +16,8 @@
  plugins:
    - {name: static, type: "costmap_2d::StaticLayer"}
    - {name: inflation, type: "costmap_2d::InflationLayer"}
+   - {name: speed_adjustment_layer, type: "costmap_2d::StaticLayer"} 
+
 
  static:
    unknown_cost_value: -1
@@ -23,5 +25,10 @@
    map_topic: /map
     
  inflation:
-   inflation_radius: 1.1
+   inflation_radius: 0.5
    cost_scaling_factor: 0.2
+
+ speed_adjustment_layer:  
+   map_file: /home/humanoidrobots/pepper/src/navigation/maps/speed_layer.yaml
+   unknown_cost_value: -1
+   lethal_cost_threshold: 100
