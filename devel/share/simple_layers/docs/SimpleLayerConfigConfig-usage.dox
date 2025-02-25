@@ -1,0 +1,9 @@
+\subsubsection usage Usage
+\verbatim
+<node name="simple_layers" pkg="simple_layers" type="simple_layers">
+  <param name="min_distance" type="double" value="1.0" />
+  <param name="max_speed" type="double" value="1.0" />
+  <param name="min_speed" type="double" value="0.2" />
+</node>
+\endverbatim
+

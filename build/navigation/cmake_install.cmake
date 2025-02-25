@@ -47,11 +47,3 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/navigation" TYPE FILE FILES "/home/humanoidrobots/pepper/src/navigation/package.xml")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/navigation" TYPE PROGRAM FILES "/home/humanoidrobots/pepper/build/navigation/catkin_generated/installspace/costmap_speed_map.py")
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/navigation" TYPE PROGRAM FILES "/home/humanoidrobots/pepper/build/navigation/catkin_generated/installspace/visualize_speed_map.py")
-endif()
-

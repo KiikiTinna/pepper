@@ -1,2 +1,2 @@
-navigation:python_scripts
+navigation:navigation_layers/range_sensor_layer:python_scripts:simple_layers:speed_filter_layer
 -DCATKIN_DEVEL_PREFIX=/home/humanoidrobots/pepper/devel -DCMAKE_INSTALL_PREFIX=/home/humanoidrobots/pepper/install -G Unix Makefiles

@@ -1,8 +1,19 @@
 <launch>
-  <node pkg="move_base" type="move_base" name="move_base" output="screen">
-    <rosparam file="$(find navigation)/config/global_costmap.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find navigation)/config/local_costmap.yaml" command="load" ns="local_costmap" />
-    <param name="base_global_planner" value="navfn/NavfnROS" />
-    <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS" />
+
+   <rosparam file="$(find navigation)/config/global_planner_params.yaml" command="load" />
+   <rosparam file="$(find navigation)/config/global_planner.yaml" command="load"/>
+    <rosparam file="$(find navigation)/config/local_planner_params.yaml" command="load" />
+
+
+  <node name="move_base" pkg="move_base" type="move_base" output="screen">
+    <!-- Additional parameters for Move Base-->
+    <remap from="/cmd_vel" to="/cmd_vel_filtered"/>
+    <param name="planner_patience" value="3.0" />
+    <param name="max_planning_retries" value="5" />
+
+
   </node>
+
+
 </launch>
+

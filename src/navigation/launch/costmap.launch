@@ -15,7 +15,6 @@
   </node>
   
   
-  
   <node name="initial_pose" pkg="navigation" type="initial_pose.py" output="screen"/>
 
   <!-- Launch RViz -->

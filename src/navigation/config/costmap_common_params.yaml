@@ -1,0 +1,4 @@
+simple_layer:
+  min_speed: 0.4
+  max_speed: 0.8
+  obstacle_distance_threshold: 1.0

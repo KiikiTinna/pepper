@@ -1,0 +1,11 @@
+image: speed_layer.png  # Path to your speed layer image
+resolution: 0.05  # Resolution (meters per pixel)
+origin: [-10.0, -10.0, 0.0]  # Origin (x, y, yaw) in meters
+negate: 0  # No negation needed
+occupied_thresh: 0.65  # Threshold for obstacles (if needed)
+free_thresh: 0.196  # Threshold for free space
+speed_mapping:
+  red: 0.3  # Slowest speed near obstacles
+  blue: 0.6  # Moderate speed
+  green: 1.0  # Free space with max speed
+

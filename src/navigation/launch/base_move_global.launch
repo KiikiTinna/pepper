@@ -1,0 +1,9 @@
+<launch>
+  <!-- Load parameters before move_base node starts -->
+  <rosparam file="$(find navigation)/config/move_base_global.yaml" command="load" />
+
+  <!-- Launch move_base -->
+  <node name="move_base" pkg="move_base" type="move_base" output="screen">
+  </node>
+</launch>
+

@@ -3,6 +3,6 @@ prefix=/home/humanoidrobots/pepper/devel
 Name: navigation
 Description: Description of navigation
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/humanoidrobots/pepper/src/navigation/include
 Libs: -L${prefix}/lib 
-Requires: 
+Requires: roscpp rospy std_msgs pluginlib costmap_2d

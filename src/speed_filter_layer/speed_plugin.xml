@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<library path="lib/libspeed_filter_layer">
+    <class type="speed_filter_layer::SpeedFilterLayer" base_class_type="costmap_2d::Layer">
+        <description>
+            A custom costmap layer that modifies the robot's speed based on proximity to obstacles.
+        </description>
+    </class>
+</library>
+
