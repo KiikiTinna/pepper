@@ -1,0 +1,12 @@
+<launch>
+    <!-- Laser interpolation filter node explicitly -->
+    <node pkg="laser_filters" type="scan_to_scan_filter_chain"
+          name="laser_interpolation_filter" output="screen">
+        <remap from="scan" to="/pepper_robot/naoqi_driver/laser"/>
+        <remap from="scan_filtered" to="/scan_filtered"/>
+
+        <!-- explicitly and clearly load YAML here -->
+        <rosparam command="load" file="$(find navigation)/config/laser_filters.yaml"/>
+    </node>
+</launch>
+

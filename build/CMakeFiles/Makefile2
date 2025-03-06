@@ -95,7 +95,7 @@ clean: CMakeFiles/clean_test_results.dir/clean
 # Target rules for target CMakeFiles/run_tests.dir
 
 # All Build rule for target.
-CMakeFiles/run_tests.dir/all: navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/all
+CMakeFiles/run_tests.dir/all:
 	$(MAKE) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/depend
 	$(MAKE) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num= "Built target run_tests"
@@ -3688,527 +3688,90 @@ clean: navigation/CMakeFiles/topic_tools_generate_messages_lisp.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory navigation_layers/range_sensor_layer
+# Directory level rules for directory right_side_layer
 
 # Convenience name for "all" pass in the directory.
-navigation_layers/range_sensor_layer/all: navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all
-navigation_layers/range_sensor_layer/all: navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/all
+right_side_layer/all: right_side_layer/CMakeFiles/right_side_layer.dir/all
 
-.PHONY : navigation_layers/range_sensor_layer/all
+.PHONY : right_side_layer/all
 
 # Convenience name for "clean" pass in the directory.
-navigation_layers/range_sensor_layer/clean: navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/clean
-navigation_layers/range_sensor_layer/clean: navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/clean
-navigation_layers/range_sensor_layer/clean: navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/clean
-navigation_layers/range_sensor_layer/clean: navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/clean
-navigation_layers/range_sensor_layer/clean: navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/clean
-navigation_layers/range_sensor_layer/clean: navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/clean
-navigation_layers/range_sensor_layer/clean: navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/clean
-navigation_layers/range_sensor_layer/clean: navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/clean
-navigation_layers/range_sensor_layer/clean: navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/clean
-navigation_layers/range_sensor_layer/clean: navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/clean
-navigation_layers/range_sensor_layer/clean: navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/clean
-navigation_layers/range_sensor_layer/clean: navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/clean
+right_side_layer/clean: right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/clean
+right_side_layer/clean: right_side_layer/CMakeFiles/right_side_layer.dir/clean
 
-.PHONY : navigation_layers/range_sensor_layer/clean
+.PHONY : right_side_layer/clean
 
 # Convenience name for "preinstall" pass in the directory.
-navigation_layers/range_sensor_layer/preinstall:
+right_side_layer/preinstall:
 
-.PHONY : navigation_layers/range_sensor_layer/preinstall
-
-#=============================================================================
-# Target rules for target navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir
-
-# All Build rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/all: CMakeFiles/tests.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/all: navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/all
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/depend
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num= "Built target _run_tests_range_sensor_layer_roslint_package"
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/all
-
-# Build rule for subdir invocation for target.
-navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/rule
-
-# Convenience name for target.
-_run_tests_range_sensor_layer_roslint_package: navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/rule
-
-.PHONY : _run_tests_range_sensor_layer_roslint_package
-
-# clean rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/clean:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/clean
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/clean
-
-# clean rule for target.
-clean: navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/clean
-
-.PHONY : clean
+.PHONY : right_side_layer/preinstall
 
 #=============================================================================
-# Target rules for target navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir
+# Target rules for target right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir
 
 # All Build rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/all: navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/all
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/depend
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num= "Built target roslint"
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/all
-
-# Build rule for subdir invocation for target.
-navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/rule
-
-# Convenience name for target.
-roslint: navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/rule
-
-.PHONY : roslint
-
-# clean rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/clean:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/clean
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/clean
-
-# clean rule for target.
-clean: navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir
-
-# All Build rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: python_scripts/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: python_scripts/CMakeFiles/std_msgs_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: python_scripts/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: python_scripts/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: python_scripts/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/roscpp_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/tf_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/costmap_2d_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/map_msgs_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/tf2_msgs_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/topic_tools_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/nav_msgs_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/dynamic_reconfigure_gencfg.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/costmap_2d_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/nav_msgs_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/costmap_2d_gencfg.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/pcl_msgs_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/tf_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/visualization_msgs_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/bond_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/nodelet_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/tf_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/roscpp_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/map_msgs_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/roscpp_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/bond_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/tf_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/map_msgs_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/costmap_2d_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/topic_tools_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/costmap_2d_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/costmap_2d_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/actionlib_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/actionlib_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/pcl_ros_gencfg.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/nav_msgs_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/map_msgs_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/nodelet_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/nav_msgs_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/map_msgs_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/nodelet_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/nodelet_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/bond_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/bond_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/nodelet_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/topic_tools_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/topic_tools_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/nodelet_topic_tools_gencfg.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/pcl_msgs_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/visualization_msgs_generate_messages_eus.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/bond_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/pcl_msgs_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/tf_generate_messages_nodejs.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/std_srvs_generate_messages_py.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation/CMakeFiles/topic_tools_generate_messages_lisp.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/all
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all: navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/all
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/depend
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num=12,13 "Built target range_sensor_layer"
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all
-
-# Include target in all.
-all: navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/rule
-
-# Convenience name for target.
-range_sensor_layer: navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/rule
-
-.PHONY : range_sensor_layer
-
-# clean rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/clean:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/clean
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/clean
-
-# clean rule for target.
-clean: navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir
-
-# All Build rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/all:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/depend
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num=14 "Built target range_sensor_layer_gencfg"
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/all
-
-# Include target in all.
-all: navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/rule
-
-# Convenience name for target.
-range_sensor_layer_gencfg: navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/rule
-
-.PHONY : range_sensor_layer_gencfg
-
-# clean rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/clean:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/clean
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/clean
-
-# clean rule for target.
-clean: navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir
-
-# All Build rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/all:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/depend
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num= "Built target run_tests_range_sensor_layer_roslint_package"
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/all
-
-# Build rule for subdir invocation for target.
-navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/rule
-
-# Convenience name for target.
-run_tests_range_sensor_layer_roslint_package: navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/rule
-
-.PHONY : run_tests_range_sensor_layer_roslint_package
-
-# clean rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/clean:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/clean
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/clean
-
-# clean rule for target.
-clean: navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir
-
-# All Build rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/all:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/depend
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num= "Built target clean_test_results_range_sensor_layer"
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/all
-
-# Build rule for subdir invocation for target.
-navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/rule
-
-# Convenience name for target.
-clean_test_results_range_sensor_layer: navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/rule
-
-.PHONY : clean_test_results_range_sensor_layer
-
-# clean rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/clean:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/clean
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/clean
-
-# clean rule for target.
-clean: navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir
-
-# All Build rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/all:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/depend
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/build
+right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/all:
+	$(MAKE) -f right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/build.make right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/depend
+	$(MAKE) -f right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/build.make right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/all
+.PHONY : right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/all
 
 # Build rule for subdir invocation for target.
-navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
+right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/rule
+.PHONY : right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 # Convenience name for target.
-_catkin_empty_exported_target: navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/rule
+_catkin_empty_exported_target: right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 .PHONY : _catkin_empty_exported_target
 
 # clean rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/clean
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/clean
+right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/clean:
+	$(MAKE) -f right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/build.make right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/clean
+.PHONY : right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 # clean rule for target.
-clean: navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/clean
+clean: right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir
+# Target rules for target right_side_layer/CMakeFiles/right_side_layer.dir
 
 # All Build rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/all:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/depend
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num= "Built target roslint_range_sensor_layer"
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/all
+right_side_layer/CMakeFiles/right_side_layer.dir/all:
+	$(MAKE) -f right_side_layer/CMakeFiles/right_side_layer.dir/build.make right_side_layer/CMakeFiles/right_side_layer.dir/depend
+	$(MAKE) -f right_side_layer/CMakeFiles/right_side_layer.dir/build.make right_side_layer/CMakeFiles/right_side_layer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num=12,13 "Built target right_side_layer"
+.PHONY : right_side_layer/CMakeFiles/right_side_layer.dir/all
+
+# Include target in all.
+all: right_side_layer/CMakeFiles/right_side_layer.dir/all
+
+.PHONY : all
 
 # Build rule for subdir invocation for target.
-navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/rule: cmake_check_build_system
+right_side_layer/CMakeFiles/right_side_layer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 right_side_layer/CMakeFiles/right_side_layer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/rule
+.PHONY : right_side_layer/CMakeFiles/right_side_layer.dir/rule
 
 # Convenience name for target.
-roslint_range_sensor_layer: navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/rule
+right_side_layer: right_side_layer/CMakeFiles/right_side_layer.dir/rule
 
-.PHONY : roslint_range_sensor_layer
-
-# clean rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/clean:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/clean
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/clean
+.PHONY : right_side_layer
 
 # clean rule for target.
-clean: navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir
-
-# All Build rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/all: navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/all
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/depend
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num= "Built target run_tests_range_sensor_layer"
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/all
-
-# Build rule for subdir invocation for target.
-navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/rule
-
-# Convenience name for target.
-run_tests_range_sensor_layer: navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/rule
-
-.PHONY : run_tests_range_sensor_layer
+right_side_layer/CMakeFiles/right_side_layer.dir/clean:
+	$(MAKE) -f right_side_layer/CMakeFiles/right_side_layer.dir/build.make right_side_layer/CMakeFiles/right_side_layer.dir/clean
+.PHONY : right_side_layer/CMakeFiles/right_side_layer.dir/clean
 
 # clean rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/clean:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/clean
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/clean
-
-# clean rule for target.
-clean: navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir
-
-# All Build rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/all: navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/all
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/depend
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num= "Built target _run_tests_range_sensor_layer"
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/all
-
-# Build rule for subdir invocation for target.
-navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/rule
-
-# Convenience name for target.
-_run_tests_range_sensor_layer: navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/rule
-
-.PHONY : _run_tests_range_sensor_layer
-
-# clean rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/clean:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/clean
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/clean
-
-# clean rule for target.
-clean: navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir
-
-# All Build rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/all: navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/all
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/depend
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num= "Built target run_tests_range_sensor_layer_roslint"
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/all
-
-# Build rule for subdir invocation for target.
-navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/rule
-
-# Convenience name for target.
-run_tests_range_sensor_layer_roslint: navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/rule
-
-.PHONY : run_tests_range_sensor_layer_roslint
-
-# clean rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/clean:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/clean
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/clean
-
-# clean rule for target.
-clean: navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir
-
-# All Build rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/all: navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/all
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/depend
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num= "Built target _run_tests_range_sensor_layer_roslint"
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/all
-
-# Build rule for subdir invocation for target.
-navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/rule
-
-# Convenience name for target.
-_run_tests_range_sensor_layer_roslint: navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/rule
-
-.PHONY : _run_tests_range_sensor_layer_roslint
-
-# clean rule for target.
-navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/clean:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/clean
-.PHONY : navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/clean
-
-# clean rule for target.
-clean: navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/clean
+clean: right_side_layer/CMakeFiles/right_side_layer.dir/clean
 
 .PHONY : clean
 
@@ -4333,10 +3896,10 @@ simple_layers/CMakeFiles/simple_layers.dir/all: navigation/CMakeFiles/pcl_msgs_g
 simple_layers/CMakeFiles/simple_layers.dir/all: navigation/CMakeFiles/tf_generate_messages_nodejs.dir/all
 simple_layers/CMakeFiles/simple_layers.dir/all: navigation/CMakeFiles/std_srvs_generate_messages_py.dir/all
 simple_layers/CMakeFiles/simple_layers.dir/all: navigation/CMakeFiles/topic_tools_generate_messages_lisp.dir/all
-simple_layers/CMakeFiles/simple_layers.dir/all: navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/all
+simple_layers/CMakeFiles/simple_layers.dir/all: right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/all
 	$(MAKE) -f simple_layers/CMakeFiles/simple_layers.dir/build.make simple_layers/CMakeFiles/simple_layers.dir/depend
 	$(MAKE) -f simple_layers/CMakeFiles/simple_layers.dir/build.make simple_layers/CMakeFiles/simple_layers.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num=15,16 "Built target simple_layers"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num=14,15 "Built target simple_layers"
 .PHONY : simple_layers/CMakeFiles/simple_layers.dir/all
 
 # Include target in all.
@@ -4487,10 +4050,9 @@ speed_filter_layer/CMakeFiles/speed_filter_layer.dir/all: navigation/CMakeFiles/
 speed_filter_layer/CMakeFiles/speed_filter_layer.dir/all: navigation/CMakeFiles/tf_generate_messages_nodejs.dir/all
 speed_filter_layer/CMakeFiles/speed_filter_layer.dir/all: navigation/CMakeFiles/std_srvs_generate_messages_py.dir/all
 speed_filter_layer/CMakeFiles/speed_filter_layer.dir/all: navigation/CMakeFiles/topic_tools_generate_messages_lisp.dir/all
-speed_filter_layer/CMakeFiles/speed_filter_layer.dir/all: navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/all
 	$(MAKE) -f speed_filter_layer/CMakeFiles/speed_filter_layer.dir/build.make speed_filter_layer/CMakeFiles/speed_filter_layer.dir/depend
 	$(MAKE) -f speed_filter_layer/CMakeFiles/speed_filter_layer.dir/build.make speed_filter_layer/CMakeFiles/speed_filter_layer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num=17,18 "Built target speed_filter_layer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num=16,17 "Built target speed_filter_layer"
 .PHONY : speed_filter_layer/CMakeFiles/speed_filter_layer.dir/all
 
 # Include target in all.
@@ -4517,6 +4079,61 @@ speed_filter_layer/CMakeFiles/speed_filter_layer.dir/clean:
 
 # clean rule for target.
 clean: speed_filter_layer/CMakeFiles/speed_filter_layer.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory test_layer
+
+# Convenience name for "all" pass in the directory.
+test_layer/all: test_layer/CMakeFiles/test_layer.dir/all
+
+.PHONY : test_layer/all
+
+# Convenience name for "clean" pass in the directory.
+test_layer/clean: test_layer/CMakeFiles/test_layer.dir/clean
+
+.PHONY : test_layer/clean
+
+# Convenience name for "preinstall" pass in the directory.
+test_layer/preinstall:
+
+.PHONY : test_layer/preinstall
+
+#=============================================================================
+# Target rules for target test_layer/CMakeFiles/test_layer.dir
+
+# All Build rule for target.
+test_layer/CMakeFiles/test_layer.dir/all:
+	$(MAKE) -f test_layer/CMakeFiles/test_layer.dir/build.make test_layer/CMakeFiles/test_layer.dir/depend
+	$(MAKE) -f test_layer/CMakeFiles/test_layer.dir/build.make test_layer/CMakeFiles/test_layer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/humanoidrobots/pepper/build/CMakeFiles --progress-num=18,19 "Built target test_layer"
+.PHONY : test_layer/CMakeFiles/test_layer.dir/all
+
+# Include target in all.
+all: test_layer/CMakeFiles/test_layer.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+test_layer/CMakeFiles/test_layer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 test_layer/CMakeFiles/test_layer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/humanoidrobots/pepper/build/CMakeFiles 0
+.PHONY : test_layer/CMakeFiles/test_layer.dir/rule
+
+# Convenience name for target.
+test_layer: test_layer/CMakeFiles/test_layer.dir/rule
+
+.PHONY : test_layer
+
+# clean rule for target.
+test_layer/CMakeFiles/test_layer.dir/clean:
+	$(MAKE) -f test_layer/CMakeFiles/test_layer.dir/build.make test_layer/CMakeFiles/test_layer.dir/clean
+.PHONY : test_layer/CMakeFiles/test_layer.dir/clean
+
+# clean rule for target.
+clean: test_layer/CMakeFiles/test_layer.dir/clean
 
 .PHONY : clean
 

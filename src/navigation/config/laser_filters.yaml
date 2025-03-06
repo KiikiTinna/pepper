@@ -1,0 +1,6 @@
+scan_to_scan_filter_chain:
+  - name: interpolation_filter
+    type: laser_filters/InterpolationFilter
+    params:
+      interpolation_rate: 10.0
+

@@ -7,7 +7,6 @@
 
   <node name="move_base" pkg="move_base" type="move_base" output="screen">
     <!-- Additional parameters for Move Base-->
-    <remap from="/cmd_vel" to="/cmd_vel_filtered"/>
     <param name="planner_patience" value="3.0" />
     <param name="max_planning_retries" value="5" />
 

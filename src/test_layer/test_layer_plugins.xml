@@ -1,0 +1,7 @@
+<library path="lib/libtest_layer">
+  <class type="test_layer::TestLayer" base_class_type="costmap_2d::Layer">
+    <description>
+      A simple costmap layer named test_layer that marks a rectangular zone with a specified cost.
+    </description>
+  </class>
+</library>

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<library path="lib/libsimple_layers">
-    <class type="simple_layer_namespace::SimpleLayer"
+<library path="lib/libsimple_layers">  
+    <class type="simple_layers::SimpleLayer"
            base_class_type="costmap_2d::Layer">
         <description>
-            Demo Layer that adds a point 1 meter in front of the robot.
+            Custom costmap layer for avoiding costly zones.
         </description>
     </class>
 </library>

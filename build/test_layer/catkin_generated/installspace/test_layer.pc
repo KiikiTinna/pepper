@@ -1,0 +1,8 @@
+prefix=/home/humanoidrobots/pepper/install
+
+Name: test_layer
+Description: Description of test_layer
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -ltest_layer
+Requires: costmap_2d roscpp pluginlib

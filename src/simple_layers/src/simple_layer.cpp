@@ -1,172 +1,247 @@
-#include <costmap_2d/costmap_layer.h>
-#include <costmap_2d/layered_costmap.h>
-#include <sensor_msgs/LaserScan.h>
-#include <pluginlib/class_list_macros.h>
-#include <geometry_msgs/Twist.h>
-#include <limits>
-#include <cmath>
-#include <ros/ros.h>
 #include <simple_layers/simple_layer.h>
+#include <pluginlib/class_list_macros.h>
+#include <cmath>
+#include <nav_msgs/OccupancyGrid.h>
+#include <ros/package.h>
+#include <opencv2/opencv.hpp>
+#include <yaml-cpp/yaml.h>
+#include <fstream>
 
-PLUGINLIB_EXPORT_CLASS(simple_layer_namespace::SimpleLayer, costmap_2d::Layer)
+PLUGINLIB_EXPORT_CLASS(simple_layers::SimpleLayer, costmap_2d::Layer)
 
-namespace simple_layer_namespace
-{
+namespace simple_layers {
 
-SimpleLayer::SimpleLayer() : min_obstacle_distance_(5.0), goal_received_(false), goal_reached_(false), enabled_(true) {}
+SimpleLayer::SimpleLayer() : enabled_(true) { }
 
-void SimpleLayer::onInitialize()
-{
+void SimpleLayer::onInitialize() {
+
     ros::NodeHandle nh("~/" + name_);
-    nh.param("enabled", enabled_, true);
-    nh.param("min_speed", min_speed_, 0.4);
-    nh.param("max_speed", max_speed_, 0.9);
-    nh.param("obstacle_distance_threshold", obstacle_distance_threshold_, 1.0);
-
-    laser_sub_ = nh.subscribe("/laser/srd_front/scan", 10, &SimpleLayer::laserCallback, this);
-    speed_pub_ = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
-    goal_status_sub_ = nh.subscribe("/move_base/status", 10, &SimpleLayer::goalStatusCallback, this);
-    global_plan_sub_ = nh.subscribe("/move_base/NavfnROS/plan", 10, &SimpleLayer::globalPlanCallback, this);
-
-    update_timer_ = nh.createTimer(ros::Duration(0.2), &SimpleLayer::updateMap, this);
-}
-
-void SimpleLayer::laserCallback(const sensor_msgs::LaserScan::ConstPtr& msg)
-{
-    if (msg->ranges.empty())
-    {
-        ROS_WARN_THROTTLE(1.0, "SimpleLayer: Received empty laser scan!");
+    current_ = true;
+    matchSize();
+    
+    // Initialize publisher for debugging
+    ros::NodeHandle public_nh;
+    custom_cost_pub_ = public_nh.advertise<nav_msgs::OccupancyGrid>("simple_layer/custom_costs", 1);
+    
+    std::string costly_zones_file, yaml_file;
+    nh.param("costly_zones_image", costly_zones_file, std::string(""));
+    nh.param("costly_zones_yaml", yaml_file, std::string(""));
+    
+    // Optional parameter for how high to set the cost (default: 200)
+    int avoidance_cost;
+    nh.param("avoidance_cost", avoidance_cost, 200);
+    avoidance_cost_ = static_cast<unsigned char>(avoidance_cost);
+    
+    if (costly_zones_file.empty() || yaml_file.empty()) {
+        ROS_WARN("No custom YAML or image path provided. Using default costmap.");
         return;
     }
-
-    min_obstacle_distance_ = msg->range_max;
-    for (const float &range : msg->ranges)
-    {
-        if (range >= msg->range_min && range <= msg->range_max)
-        {
-            min_obstacle_distance_ = std::min(min_obstacle_distance_, static_cast<double>(range));
+    
+    ROS_INFO("Loading custom cost map from: %s", costly_zones_file.c_str());
+    ROS_INFO("Using map metadata from: %s", yaml_file.c_str());
+    
+    YAML::Node map_metadata = YAML::LoadFile(yaml_file);
+    resolution_ = map_metadata["resolution"].as<double>();
+    origin_x_ = map_metadata["origin"][0].as<double>();
+    origin_y_ = map_metadata["origin"][1].as<double>();
+    occupied_thresh_ = map_metadata["occupied_thresh"].as<double>();
+    free_thresh_ = map_metadata["free_thresh"].as<double>();
+    
+    if (costly_zones_file[0] != '/') {
+        std::string yaml_dir = yaml_file.substr(0, yaml_file.find_last_of("/"));
+        costly_zones_file = yaml_dir + "/" + costly_zones_file;
+        ROS_INFO("Adjusted image path to: %s", costly_zones_file.c_str());
+    }
+    
+    costly_map_ = cv::imread(costly_zones_file, cv::IMREAD_GRAYSCALE);
+    if (costly_map_.empty()) {
+        ROS_ERROR("Cannot load cost map image at %s", costly_zones_file.c_str());
+        return;
+    }
+    
+    map_width_ = costly_map_.cols;
+    map_height_ = costly_map_.rows;
+    
+    ROS_INFO("Loaded costly_map with dimensions: %dx%d", map_width_, map_height_);
+    
+    // Initialize custom_map_ with FREE_SPACE
+    custom_map_ = std::vector<std::vector<unsigned char>>(map_height_, 
+                 std::vector<unsigned char>(map_width_, costmap_2d::FREE_SPACE));
+    
+    // Analyze the values in the map
+    std::map<int, int> value_counts;
+    for (int y = 0; y < map_height_; y++) {
+        for (int x = 0; x < map_width_; x++) {
+            int val = (int)costly_map_.at<unsigned char>(y, x);
+            value_counts[val]++;
         }
     }
-
-    adjustSpeed();
-}
-
-void SimpleLayer::goalStatusCallback(const actionlib_msgs::GoalStatusArray::ConstPtr& msg)
-{
-    if (!msg->status_list.empty())
-    {
-        int status = msg->status_list.back().status;
-        if (status == 3)  // Goal reached
-        {
-            goal_reached_ = true;
-            goal_received_ = false;
-            ROS_INFO("SimpleLayer: Goal reached! Stopping robot.");
-        }
+    
+    ROS_INFO("Values found in costly_map:");
+    for (const auto& pair : value_counts) {
+        ROS_INFO("Value %d: %d occurrences", pair.first, pair.second);
     }
-}
-
-void SimpleLayer::globalPlanCallback(const nav_msgs::Path::ConstPtr& msg)
-{
-    global_plan_ = msg->poses;  
-    goal_received_ = !global_plan_.empty();  // ✅ Robot moves only when path is available
-    ROS_INFO("SimpleLayer: Received new global plan with %lu points", global_plan_.size());
-    adjustSpeed();
-}
-
-void SimpleLayer::adjustSpeed()
-{
-    geometry_msgs::Twist vel_msg;
-
-    if (!goal_received_)  
-    {
-        vel_msg.linear.x = 0.0;  // 🚨 No path → Stop robot
-    }
-    else if (goal_reached_)  
-    {
-        vel_msg.linear.x = 0.0;  // 🚨 Goal reached → Stop robot
-        goal_received_ = false;
-        goal_reached_ = false;
-    }
-    else  
-    {
-        double min_distance_to_path = std::numeric_limits<double>::max();
-        
-        for (const auto& pose : global_plan_)
-        {
-            double dx = pose.pose.position.x - 0.0;
-            double dy = pose.pose.position.y - 0.0;
-            double distance = std::sqrt(dx * dx + dy * dy);
-
-            if (distance < min_distance_to_path)
-            {
-                min_distance_to_path = distance;
+    
+    // Convert costly_map_ values to costmap values
+    int count_costly = 0;
+    for (int y = 0; y < map_height_; y++) {
+        for (int x = 0; x < map_width_; x++) {
+            unsigned char pixel_value = costly_map_.at<unsigned char>(y, x);
+            
+            // Look for any non-free, non-lethal value
+            // Adjust this condition based on what values you found in your map
+            if (pixel_value > 0 && pixel_value < 100) {
+                custom_map_[y][x] = avoidance_cost_;
+                count_costly++;
             }
         }
-
-        if (min_obstacle_distance_ < obstacle_distance_threshold_)
-        {
-            vel_msg.linear.x = min_speed_;
-        }
-        else if (min_distance_to_path > 1.0)  
-        {
-            vel_msg.linear.x = min_speed_;
-        }
-        else  
-        {
-            vel_msg.linear.x = max_speed_;
-        }
     }
-
-    speed_pub_.publish(vel_msg);
-    ROS_INFO_THROTTLE(1.0, "SimpleLayer: Speed updated to: %.2f", vel_msg.linear.x);
-}
-
-void SimpleLayer::updateBounds(double origin_x, double origin_y, double origin_yaw,
-                               double* min_x, double* min_y, double* max_x, double* max_y)
-{
-    if (!enabled_)
-        return;
-
-    ROS_INFO_THROTTLE(1.0, "SimpleLayer: Expanding costmap bounds.");
-
-    *min_x = std::min(*min_x, origin_x - 1.0);
-    *min_y = std::min(*min_y, origin_y - 1.0);
-    *max_x = std::max(*max_x, origin_x + 1.0);
-    *max_y = std::max(*max_y, origin_y + 1.0);
-}
-
-void SimpleLayer::updateCosts(costmap_2d::Costmap2D& master_grid, int min_i, int min_j, int max_i, int max_j)
-{
-    if (!enabled_)
-        return;
-
-    for (int i = min_i; i < max_i; i++)
-    {
-        for (int j = min_j; j < max_j; j++)
-        {
-            master_grid.setCost(i, j, costmap_2d::LETHAL_OBSTACLE);
-        }
-    }
-
-    ROS_INFO_THROTTLE(1.0, "SimpleLayer: Updated costs in local costmap.");
-}
-
-void SimpleLayer::updateMap(const ros::TimerEvent& event)
-{
-    if (!enabled_)
-        return;
-
-    double min_x = 0.0, min_y = 0.0, max_x = 0.0, max_y = 0.0;
     
-    this->matchSize();
-    this->updateBounds(0.0, 0.0, 0.0, &min_x, &min_y, &max_x, &max_y);
-    this->updateCosts(*layered_costmap_->getCostmap(), 0, 0, 
-                      layered_costmap_->getCostmap()->getSizeInCellsX(), 
-                      layered_costmap_->getCostmap()->getSizeInCellsY());
-
-    ROS_INFO_THROTTLE(1.0, "SimpleLayer: Costmap manually updated.");
+    ROS_INFO("Custom cost map successfully loaded! Size: %dx%d", map_width_, map_height_);
+    ROS_INFO("Found %d cells with costs in costly_map", count_costly);
+    ROS_INFO("Areas with costs will have avoidance cost of %d", avoidance_cost_);
+    
+    // Publish the custom map immediately after initialization
+    publishCustomCosts();
+    
+    // Create and publish a test grid to verify publisher works
+    publishTestGrid();
 }
 
-} // namespace simple_layer_namespace
+void SimpleLayer::updateBounds(double robot_x, double robot_y, double robot_yaw, 
+                              double* min_x, double* min_y, 
+                              double* max_x, double* max_y) {
+    if (!enabled_ || custom_map_.empty()) {
+        ROS_DEBUG_THROTTLE(5.0, "SimpleLayer::updateBounds skipped (enabled=%d, custom_map_empty=%d)",
+                          enabled_, custom_map_.empty());
+        return;
+    }
+    
+    // Update bounds to include the entire custom map
+    *min_x = std::min(*min_x, origin_x_);
+    *min_y = std::min(*min_y, origin_y_);
+    *max_x = std::max(*max_x, origin_x_ + map_width_ * resolution_);
+    *max_y = std::max(*max_y, origin_y_ + map_height_ * resolution_);
+    
+    ROS_DEBUG("SimpleLayer::updateBounds: bounds set to %.2f, %.2f, %.2f, %.2f", 
+              *min_x, *min_y, *max_x, *max_y);
+}
 
+void SimpleLayer::updateCosts(costmap_2d::Costmap2D& master_grid, 
+                             int min_i, int min_j, int max_i, int max_j) {
+    ROS_INFO_THROTTLE(1.0, "SimpleLayer enabled: %s", enabled_ ? "true" : "false");
+    
+    if (!enabled_ || custom_map_.empty()) {
+        ROS_DEBUG_THROTTLE(5.0, "SimpleLayer::updateCosts skipped (enabled=%d, custom_map_empty=%d)",
+                          enabled_, custom_map_.empty());
+        return;
+    }
+    
+    // Log that we're updating costs
+    ROS_INFO_THROTTLE(1.0, "SimpleLayer::updateCosts called with bounds: min_i=%d, min_j=%d, max_i=%d, max_j=%d", 
+                     min_i, min_j, max_i, max_j);
+    ROS_INFO_THROTTLE(1.0, "custom_map_ size: %dx%d", 
+                     (int)custom_map_.size(), custom_map_.empty() ? 0 : (int)custom_map_[0].size());
+    
+    int count_updates = 0;
+    for (int j = min_j; j < max_j; j++) {
+        for (int i = min_i; i < max_i; i++) {
+            // Convert master grid cell to world coordinates
+            double wx, wy;
+            master_grid.mapToWorld(i, j, wx, wy);
+            
+            // Convert world coordinates to custom map coordinates
+            int mx = static_cast<int>((wx - origin_x_) / resolution_);
+            int my = static_cast<int>((wy - origin_y_) / resolution_);
+            
+            // Check if the point is within the custom map bounds
+            if (mx >= 0 && mx < map_width_ && my >= 0 && my < map_height_) {
+                unsigned char custom_cost = custom_map_[my][mx];
+                
+                // If the custom cost is higher than the current cost, update it
+                if (custom_cost > costmap_2d::FREE_SPACE) {
+                    unsigned char current = master_grid.getCost(i, j);
+                    if (current < custom_cost) {
+                        master_grid.setCost(i, j, custom_cost);
+                        count_updates++;
+                        
+                        // Log some of the updates for debugging
+                        if (count_updates % 100 == 0) {
+                            ROS_INFO_THROTTLE(2.0, "Updated cost at world: (%.2f, %.2f), map: (%d, %d), from %d to %d", 
+                                            wx, wy, mx, my, current, custom_cost);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    ROS_INFO_THROTTLE(1.0, "SimpleLayer::updateCosts updated %d cells", count_updates);
+    
+    // Publish the custom costs for visualization
+    static ros::Time last_pub_time = ros::Time::now();
+    ros::Duration time_since_last_pub = ros::Time::now() - last_pub_time;
+    if (time_since_last_pub.toSec() > 2.0) {  // Publish every 2 seconds
+        publishCustomCosts();
+        last_pub_time = ros::Time::now();
+    }
+}
 
+void SimpleLayer::publishCustomCosts() {
+    ROS_INFO_THROTTLE(2.0, "Attempting to publish custom costs...");
+    
+    if (custom_map_.empty()) {
+        ROS_WARN("Cannot publish custom costs: custom_map_ is empty");
+        return;
+    }
+    
+    nav_msgs::OccupancyGrid grid;
+    grid.header.stamp = ros::Time::now();
+    grid.header.frame_id = "map";  // Make sure this matches your map frame
+    grid.info.resolution = resolution_;
+    grid.info.width = map_width_;
+    grid.info.height = map_height_;
+    grid.info.origin.position.x = origin_x_;
+    grid.info.origin.position.y = origin_y_;
+    
+    grid.data.resize(map_width_ * map_height_);
+    for (unsigned int y = 0; y < map_height_; y++) {
+        for (unsigned int x = 0; x < map_width_; x++) {
+            unsigned int index = y * map_width_ + x;
+            // Convert costmap values to occupancy grid values (0-100)
+            if (custom_map_[y][x] > costmap_2d::FREE_SPACE) {
+                grid.data[index] = 99;  // High cost but not obstacle
+            } else {
+                grid.data[index] = 0;   // Free space
+            }
+        }
+    }
+    
+    custom_cost_pub_.publish(grid);
+    ROS_INFO_THROTTLE(2.0, "Published custom costs to simple_layer/custom_costs");
+}
+
+void SimpleLayer::publishTestGrid() {
+    // Create and publish a test grid
+    nav_msgs::OccupancyGrid test_grid;
+    test_grid.header.stamp = ros::Time::now();
+    test_grid.header.frame_id = "map";
+    test_grid.info.resolution = 0.05;
+    test_grid.info.width = 100;
+    test_grid.info.height = 100;
+    test_grid.info.origin.position.x = 0;
+    test_grid.info.origin.position.y = 0;
+    
+    test_grid.data.resize(100 * 100, 0);
+    // Create a simple pattern
+    for (int y = 25; y < 75; y++) {
+        for (int x = 25; x < 75; x++) {
+            test_grid.data[y * 100 + x] = 99;
+        }
+    }
+    
+    custom_cost_pub_.publish(test_grid);
+    ROS_INFO("Published test grid to simple_layer/custom_costs");
+}
+
+} // namespace simple_layers

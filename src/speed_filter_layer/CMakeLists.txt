@@ -3,25 +3,25 @@ project(speed_filter_layer)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
+find_package(OpenCV REQUIRED)
 
-## Find catkin macros and libraries
-## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
-## is used, also find other catkin packages
+
 find_package(catkin REQUIRED COMPONENTS
-  costmap_2d
-  dynamic_reconfigure
-  sensor_msgs
-  geometry_msgs
-  pluginlib
   roscpp
-  nav_msgs 
+  costmap_2d
+  pluginlib
+  geometry_msgs
+  sensor_msgs
+  nav_msgs
+  std_msgs
+  dynamic_reconfigure
 )
 
 
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES speed_filter_layer
-  CATKIN_DEPENDS roscpp costmap_2d pluginlib sensor_msgs geometry_msgs std_msgs dynamic_reconfigure nav_msgs
+  CATKIN_DEPENDS roscpp costmap_2d pluginlib sensor_msgs geometry_msgs std_msgs dynamic_reconfigure nav_msgs 
 #  DEPENDS system_lib
 )
 
@@ -36,6 +36,8 @@ catkin_package(
 include_directories(
  include
   ${catkin_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
+  ${YAML_CPP_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -46,17 +48,15 @@ include_directories(
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
- add_dependencies(speed_filter_layer ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
-
-
-## Add cmake target dependencies of the executable
-## same as for the library above
  add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS})
 ##${catkin_EXPORTED_TARGETS})
 
+
+
 ## Specify libraries to link a library or executable target against
- target_link_libraries(speed_filter_layer ${catkin_LIBRARIES})
+ target_link_libraries(speed_filter_layer 
+  ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} yaml-cpp)
+
 
 #############
 ## Install ##

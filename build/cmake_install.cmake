@@ -128,9 +128,10 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/humanoidrobots/pepper/build/gtest/cmake_install.cmake")
   include("/home/humanoidrobots/pepper/build/python_scripts/cmake_install.cmake")
   include("/home/humanoidrobots/pepper/build/navigation/cmake_install.cmake")
-  include("/home/humanoidrobots/pepper/build/navigation_layers/range_sensor_layer/cmake_install.cmake")
+  include("/home/humanoidrobots/pepper/build/right_side_layer/cmake_install.cmake")
   include("/home/humanoidrobots/pepper/build/simple_layers/cmake_install.cmake")
   include("/home/humanoidrobots/pepper/build/speed_filter_layer/cmake_install.cmake")
+  include("/home/humanoidrobots/pepper/build/test_layer/cmake_install.cmake")
 
 endif()
 

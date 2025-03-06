@@ -1,11 +1,11 @@
 <launch>
     <!-- Argument for Laser Scan Topic -->
-    <arg name="topic_scan" default="/pepper_robot/naoqi_driver/laser" />
+   <!-- <arg name="topic_scan" default="/pepper_robot/naoqi_driver/laser" /> -->
 
     <!-- AMCL Node -->
     <node pkg="amcl" type="amcl" name="amcl" respawn="true" output="screen">
-        <remap from="/scan" to="$(arg topic_scan)"/>
-        
+        <remap from="/scan" to="/pepper_robot/naoqi_driver/laser"/>
+
         <!-- Initial Robot Pose -->
         <param name="initial_pose_x" value="0.0"/>
         <param name="initial_pose_y" value="0.0"/>
@@ -41,12 +41,15 @@
 
         <!-- Update and Filtering Parameters -->
         <param name="update_min_d" value="0.01"/>
-        <param name="update_min_a" value="0.02"/>
+        <param name="update_min_a" value="0.01"/>
         <param name="recovery_alpha_slow" value="0.0"/>
         <param name="recovery_alpha_fast" value="0.0"/>
 
         <!-- TF Frames -->
         <param name="odom_frame_id" value="odom"/>
         <param name="base_frame_id" value="base_footprint"/>
+
+        
+
     </node>
 </launch>

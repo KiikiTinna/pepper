@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.0.2)
 project(simple_layers)
 
-set(CMAKE_CXX_STANDARD 11)
+## Compile as C++11, supported in ROS Kinetic and newer
+add_compile_options(-std=c++11)
+find_package(OpenCV REQUIRED)
+find_package(yaml-cpp REQUIRED)
 
 find_package(catkin REQUIRED COMPONENTS
   costmap_2d
@@ -15,8 +18,8 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package(
     INCLUDE_DIRS include 
-    CATKIN_DEPENDS costmap_2d dynamic_reconfigure pluginlib roscpp nav_msgs sensor_msgs
     LIBRARIES simple_layers
+    CATKIN_DEPENDS costmap_2d dynamic_reconfigure pluginlib roscpp nav_msgs sensor_msgs
 )
 
 ###########
@@ -42,9 +45,7 @@ add_dependencies(simple_layers ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPO
 
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(simple_layers ${catkin_LIBRARIES})
-
-
+target_link_libraries(simple_layers ${catkin_LIBRARIES} ${OpenCV_LIBS} yaml-cpp)
 
 
 install(FILES costmap_plugins.xml

@@ -1,0 +1,21 @@
+<launch>
+
+    <!-- Set robot IP and network configurations -->
+    <arg name="nao_ip" default="192.168.0.104"/>
+    <arg name="roscore_ip" default="192.168.0.102"/>
+    <arg name="network_interface" default="wlp3s0"/>
+
+    <!-- Start Pepper's bringup with specified arguments -->
+    <include file="$(find pepper_bringup)/launch/pepper_full.launch">
+        <arg name="nao_ip" value="$(arg nao_ip)"/>
+        <arg name="roscore_ip" value="$(arg roscore_ip)"/>
+        <arg name="network_interface" value="$(arg network_interface)"/>
+    </include>
+
+    <!-- Remap /cmd_vel_filtered back to /cmd_vel for Pepper’s controller -->
+    <node pkg="naoqi_driver" type="naoqi_driver_node" name="naoqi_driver">
+        <remap from="/cmd_vel" to="/cmd_vel_filtered"/>
+    </node>
+
+</launch>
+

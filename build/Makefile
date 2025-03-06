@@ -1570,84 +1570,6 @@ topic_tools_generate_messages_lisp/fast:
 .PHONY : topic_tools_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named _run_tests_range_sensor_layer_roslint_package
-
-# Build rule for target.
-_run_tests_range_sensor_layer_roslint_package: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_range_sensor_layer_roslint_package
-.PHONY : _run_tests_range_sensor_layer_roslint_package
-
-# fast build rule for target.
-_run_tests_range_sensor_layer_roslint_package/fast:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint_package.dir/build
-.PHONY : _run_tests_range_sensor_layer_roslint_package/fast
-
-#=============================================================================
-# Target rules for targets named roslint
-
-# Build rule for target.
-roslint: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roslint
-.PHONY : roslint
-
-# fast build rule for target.
-roslint/fast:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/roslint.dir/build
-.PHONY : roslint/fast
-
-#=============================================================================
-# Target rules for targets named range_sensor_layer
-
-# Build rule for target.
-range_sensor_layer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 range_sensor_layer
-.PHONY : range_sensor_layer
-
-# fast build rule for target.
-range_sensor_layer/fast:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer.dir/build
-.PHONY : range_sensor_layer/fast
-
-#=============================================================================
-# Target rules for targets named range_sensor_layer_gencfg
-
-# Build rule for target.
-range_sensor_layer_gencfg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 range_sensor_layer_gencfg
-.PHONY : range_sensor_layer_gencfg
-
-# fast build rule for target.
-range_sensor_layer_gencfg/fast:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/range_sensor_layer_gencfg.dir/build
-.PHONY : range_sensor_layer_gencfg/fast
-
-#=============================================================================
-# Target rules for targets named run_tests_range_sensor_layer_roslint_package
-
-# Build rule for target.
-run_tests_range_sensor_layer_roslint_package: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_range_sensor_layer_roslint_package
-.PHONY : run_tests_range_sensor_layer_roslint_package
-
-# fast build rule for target.
-run_tests_range_sensor_layer_roslint_package/fast:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint_package.dir/build
-.PHONY : run_tests_range_sensor_layer_roslint_package/fast
-
-#=============================================================================
-# Target rules for targets named clean_test_results_range_sensor_layer
-
-# Build rule for target.
-clean_test_results_range_sensor_layer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results_range_sensor_layer
-.PHONY : clean_test_results_range_sensor_layer
-
-# fast build rule for target.
-clean_test_results_range_sensor_layer/fast:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/clean_test_results_range_sensor_layer.dir/build
-.PHONY : clean_test_results_range_sensor_layer/fast
-
-#=============================================================================
 # Target rules for targets named _catkin_empty_exported_target
 
 # Build rule for target.
@@ -1657,73 +1579,21 @@ _catkin_empty_exported_target: cmake_check_build_system
 
 # fast build rule for target.
 _catkin_empty_exported_target/fast:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/_catkin_empty_exported_target.dir/build
+	$(MAKE) -f right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/build.make right_side_layer/CMakeFiles/_catkin_empty_exported_target.dir/build
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
-# Target rules for targets named roslint_range_sensor_layer
+# Target rules for targets named right_side_layer
 
 # Build rule for target.
-roslint_range_sensor_layer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roslint_range_sensor_layer
-.PHONY : roslint_range_sensor_layer
+right_side_layer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 right_side_layer
+.PHONY : right_side_layer
 
 # fast build rule for target.
-roslint_range_sensor_layer/fast:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/roslint_range_sensor_layer.dir/build
-.PHONY : roslint_range_sensor_layer/fast
-
-#=============================================================================
-# Target rules for targets named run_tests_range_sensor_layer
-
-# Build rule for target.
-run_tests_range_sensor_layer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_range_sensor_layer
-.PHONY : run_tests_range_sensor_layer
-
-# fast build rule for target.
-run_tests_range_sensor_layer/fast:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer.dir/build
-.PHONY : run_tests_range_sensor_layer/fast
-
-#=============================================================================
-# Target rules for targets named _run_tests_range_sensor_layer
-
-# Build rule for target.
-_run_tests_range_sensor_layer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_range_sensor_layer
-.PHONY : _run_tests_range_sensor_layer
-
-# fast build rule for target.
-_run_tests_range_sensor_layer/fast:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer.dir/build
-.PHONY : _run_tests_range_sensor_layer/fast
-
-#=============================================================================
-# Target rules for targets named run_tests_range_sensor_layer_roslint
-
-# Build rule for target.
-run_tests_range_sensor_layer_roslint: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_range_sensor_layer_roslint
-.PHONY : run_tests_range_sensor_layer_roslint
-
-# fast build rule for target.
-run_tests_range_sensor_layer_roslint/fast:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/run_tests_range_sensor_layer_roslint.dir/build
-.PHONY : run_tests_range_sensor_layer_roslint/fast
-
-#=============================================================================
-# Target rules for targets named _run_tests_range_sensor_layer_roslint
-
-# Build rule for target.
-_run_tests_range_sensor_layer_roslint: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_range_sensor_layer_roslint
-.PHONY : _run_tests_range_sensor_layer_roslint
-
-# fast build rule for target.
-_run_tests_range_sensor_layer_roslint/fast:
-	$(MAKE) -f navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/build.make navigation_layers/range_sensor_layer/CMakeFiles/_run_tests_range_sensor_layer_roslint.dir/build
-.PHONY : _run_tests_range_sensor_layer_roslint/fast
+right_side_layer/fast:
+	$(MAKE) -f right_side_layer/CMakeFiles/right_side_layer.dir/build.make right_side_layer/CMakeFiles/right_side_layer.dir/build
+.PHONY : right_side_layer/fast
 
 #=============================================================================
 # Target rules for targets named simple_layers
@@ -1750,6 +1620,19 @@ speed_filter_layer: cmake_check_build_system
 speed_filter_layer/fast:
 	$(MAKE) -f speed_filter_layer/CMakeFiles/speed_filter_layer.dir/build.make speed_filter_layer/CMakeFiles/speed_filter_layer.dir/build
 .PHONY : speed_filter_layer/fast
+
+#=============================================================================
+# Target rules for targets named test_layer
+
+# Build rule for target.
+test_layer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_layer
+.PHONY : test_layer
+
+# fast build rule for target.
+test_layer/fast:
+	$(MAKE) -f test_layer/CMakeFiles/test_layer.dir/build.make test_layer/CMakeFiles/test_layer.dir/build
+.PHONY : test_layer/fast
 
 # Help Target
 help:
@@ -1872,20 +1755,11 @@ help:
 	@echo "... tf_generate_messages_nodejs"
 	@echo "... std_srvs_generate_messages_py"
 	@echo "... topic_tools_generate_messages_lisp"
-	@echo "... _run_tests_range_sensor_layer_roslint_package"
-	@echo "... roslint"
-	@echo "... range_sensor_layer"
-	@echo "... range_sensor_layer_gencfg"
-	@echo "... run_tests_range_sensor_layer_roslint_package"
-	@echo "... clean_test_results_range_sensor_layer"
 	@echo "... _catkin_empty_exported_target"
-	@echo "... roslint_range_sensor_layer"
-	@echo "... run_tests_range_sensor_layer"
-	@echo "... _run_tests_range_sensor_layer"
-	@echo "... run_tests_range_sensor_layer_roslint"
-	@echo "... _run_tests_range_sensor_layer_roslint"
+	@echo "... right_side_layer"
 	@echo "... simple_layers"
 	@echo "... speed_filter_layer"
+	@echo "... test_layer"
 .PHONY : help
 
 
