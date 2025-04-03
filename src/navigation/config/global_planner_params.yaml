@@ -19,7 +19,7 @@ move_base:
       - {name: static_layer, type: "costmap_2d::StaticLayer"}
       - {name: test_layer_1, type: "test_layer::TestLayer"}
       - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
-#      - {name: "right_side_layer", type: "right_side_layer::RightSideLayer" }
+      - {name: "right_side_layer", type: "right_side_layer::RightSideLayer" }
 
 
 
@@ -40,8 +40,8 @@ move_base:
       max_obstacle_height: 3.0       
       min_obstacle_height: 0.1 
 
-#    right_side_layer:
-#      enabled: true
-#      bias_factor: 200  
-#      inflation_radius: 0.0
-#      outer_radius: 0.5
+    right_side_layer:
+      enabled: true
+      bias_factor: 200  
+      inflation_radius: 0.0
+      outer_radius: 0.5
