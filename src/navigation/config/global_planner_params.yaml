@@ -4,46 +4,44 @@ move_base:
 
   # Global costmap settings
   global_costmap:
-    global_frame: "/map"
-    robot_base_frame: "/base_footprint"
+    global_frame: /map
+    robot_base_frame: /base_footprint
+    update_frequency: 0.5
+    publish_frequency: 0.5
     static_map: true
-    update_frequency: 2.0
-    publish_frequency: 2.0
     transform_tolerance: 2.0
     observation_sources: /pepper_robot/naoqi_driver/laser
-    footprint: [[-0.242,-0.212], [0.242, -0.212], [0, 0.213]]
+    robot_radius: 0.48
+#    footprint: [[0.2425, 0.0], [-0.2125, 0.2125], [-0.2125, -0.2125]]
+
 
     plugins:
       - {name: static_layer, type: "costmap_2d::StaticLayer"}
-      - {name: inflation, type: "costmap_2d::InflationLayer"}
-#      - {name: test_layer, type: "test_layer::TestLayer"}
-#      - {name: simple_layers, type: "simple_layers::SimpleLayer"}
-      - { name: "right_side_layer", type: "right_side_layer_namespace::RightSideLayer" }
+      - {name: test_layer_1, type: "test_layer::TestLayer"}
+      - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
+#      - {name: "right_side_layer", type: "right_side_layer::RightSideLayer" }
 
 
-# Parameters for the simple layer:
-#    simple_layers:
-#      enabled: false
-#      costly_zones_image: "/home/humanoidrobots/pepper/src/navigation/maps/costly_zones.pgm"
-#      costly_zones_yaml: "/home/humanoidrobots/pepper/src/navigation/maps/costly_zones.yaml"
-#      avoidance_cost: 250
+
+    test_layer_1:
+      enabled: false
+      min_x: -1.1
+      min_y: -0.2
+      max_x: -0.8
+      max_y: 0.1
+      cost_value: 253
+
 
     inflation_layer:
-      inflation_radius: 0.2
-      cost_scaling_factor: 4.0
-      max_obstacle_height: 0.3       
-      min_obstacle_height: 0.0 
-
-#    test_layer:
-#      enabled: false
-#      min_x: -1.65
-#      min_y: -0.25      
-#      max_x: -0.79      
-#      max_y: 1.25
-#      cost_value: 250
-    
-    right_side_layer:
       enabled: true
-      right_side_bias_factor: 75  
-      obstacle_detection_range: 1.5
+      inflation_radius: 0.3
+      cost_scaling_factor: 0.5
+      inflate_unknown: false
+      max_obstacle_height: 3.0       
+      min_obstacle_height: 0.1 
 
+#    right_side_layer:
+#      enabled: true
+#      bias_factor: 200  
+#      inflation_radius: 0.0
+#      outer_radius: 0.5
