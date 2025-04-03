@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <library path="lib/libright_side_layer">
-  <class type="right_side_layer_namespace::RightSideLayer" base_class_type="costmap_2d::Layer">
+  <class type="right_side_layer::RightSideLayer" base_class_type="costmap_2d::Layer">
     <description>A layer that encourages the robot to pass obstacles on the right side</description>
   </class>
 </library>

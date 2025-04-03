@@ -7,12 +7,51 @@
 
   <node name="move_base" pkg="move_base" type="move_base" output="screen">
     <!-- Additional parameters for Move Base-->
-    <param name="planner_patience" value="3.0" />
-    <param name="max_planning_retries" value="5" />
+    <param name="controller_frequency" value="10.0"/>
+    <param name="controller_patience" value="5.0" />
+    <param name="planner_patience" value="5.0" />
+    <param name="max_planning_retries" value="5.0" />
+
+    <param name="recovery_behavior_enabled" value="true" />
+    <param name="clearing_rotation_allowed" value="false" />
+
+    <!-- Recovery Behaviors -->
+    <rosparam param="recovery_behaviors">
+      [
+        {
+          name: conservative_reset,
+          type: clear_costmap_recovery/ClearCostmapRecovery
+        },
+        {
+          name: move_slow_and_clear,
+          type: move_slow_and_clear/MoveSlowAndClear
+        },
+        {
+          name: rotate_recovery,
+          type: rotate_recovery/RotateRecovery
+        },
+
+        {
+          name: aggressive_reset,
+          type: clear_costmap_recovery/ClearCostmapRecovery
+        }
+      ]
+    </rosparam>
+    
+    <!-- Recovery Behavior Parameters -->
+    <param name="conservative_reset/reset_distance" value="1.0" />
+    <param name="aggressive_reset/reset_distance" value="3.0" />
+
+    <param name="move_slow_and_clear/clearing_distance" value="0.1" /> <!-- Move forward 0.5m -->
+    <param name="move_slow_and_clear/limited_trans_speed" value="0.1" /> <!-- Slow forward speed -->
+    <param name="move_slow_and_clear/limited_rot_speed" value="0.2" /> <!-- Slow rotation speed -->
+    <param name="move_slow_and_clear/limited_distance" value="0.2" /> <!-- Limit forward movement to 0.5m -->
+
+
+    <param name="rotate_recovery/sim_granularity" value="0.02" />
+    <param name="rotate_recovery/frequency" value="2.0" />
 
 
   </node>
-
-
 </launch>
 
