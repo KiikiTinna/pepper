@@ -1,0 +1,10 @@
+topics:
+  - name: low_speed
+    topic: /low_speed_cmd_vel
+    timeout: 0.5
+    priority: 70
+  - name: move_base
+    topic: /move_base_cmd_vel
+    timeout: 0.5
+    priority: 10
+locks: []

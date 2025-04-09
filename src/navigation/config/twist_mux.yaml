@@ -1,0 +1,11 @@
+topics:
+  - name: stop
+    topic: /stop_cmd_vel
+    timeout: 10.0
+    priority: 100
+  - name: move_base
+    topic: /move_base_cmd_vel
+    timeout: 10.0
+    priority: 10
+locks: []
+
